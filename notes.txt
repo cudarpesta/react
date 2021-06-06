@@ -121,3 +121,80 @@ ReactDom.render(<App />,
 
 3.6 understanding jsx
 
+3.7 JSX restrictions
+in the return statement of every component, it's a best practice to return one root element
+
+3.8 creating a functional component
+a component is just a functions which returns some jsx
+a component always starts with a capital char
+all lowercase words/elements are reserverd for the html elements
+
+3.9 components & jsx
+we can create components in 2 ways:
+1. Functional components (also referred to as "presentational", "dumb" or "stateless" components - more about this later in the course) => const cmp = () => { return <div>some JSX</div> } (using ES6 arrow functions as shown here is recommended but optional) -> BEST PRACTICE
+
+2. class-based components (also referred to as "containers", "smart" or "stateful" components) => class Cmp extends Component { render () { return <div>some JSX</div> } } 
+
+3.11
+working with props
+when using class-based components, the usage of props would be as follows:
+class Person extends Component {
+	render() {
+		return <p>My name is {this.props}</p>
+	}
+}
+
+3.13 understanding the children prop
+in props, there is a special reserverd keyword: children
+with props.children we can access a component's children html content, or just the simple element textual content
+
+So this way we can pass params not only through attributes, but via child elements too.
+
+3.14
+state is a special property in classes which are extending the Component special class.
+Whenever this state property (or it's value) changes , react will re-render the DOM of the component
+
+3.16 Handling events with methods
+in basic html a button has an onclick method, in JSX it is called onClick (with capital C). 
+IMPORTANT!!
+in case of <button onClick={this.switchNameHandler}/> the button onclick method would only run, if the button is clicked.
+If it would be {this.switchNamesHandler()}, then the method would be executed when the page is rendered
+
+3.20 using the useState() hooks
+useState(INITIAL_STATE, state updating method)
+
+IMPORTANT: the state updating method does not merges the new state (data) with the old one, as instead it replaces it instead
+
+3.21 stateful and stateless component
+Stateful comp (smart component, or conatiner component) is a comp, that manages state, 
+stateless comp (or presentational or dumb component) is a comp, which has no internal state management
+
+3.22 passing method reference between components
+it is a common practice to pass down click handlers (which allow us to change data in the parent component) to child components from parent components.
+
+IMPORTANT
+if using () => this.switchNameHandler(), it automaticallywrites a return in front of this.switchNa....
+so if we're using onClick={this.switchNameHandler} , it is equal of using onClick={() => this.switchNameHandler()} , meaning this won't get executed if using () at the end
+
+3.23 adding two way bounding
+
+3.24 adding styling with stylesheets
+can import a css into a component file with
+import "./Person.css"
+
+3.25 working with inline stylesheets
+can create an inlined style json object like:
+const style = {
+	border: '...',
+	padding: '...',
+}
+
+then use it in <button style={style}>
+IMPORTANT: when adding a button { ... } styling into a component css file, it will have a global effect.
+In case of inline styles, the scope is for the current component.
+
+3.27 assignment
+
+
+
+
