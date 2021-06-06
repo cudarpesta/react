@@ -1,0 +1,123 @@
+1.5 Writing our first react code
+codepen.io
+
+card like css:
+.person {
+  border: 1p solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  width: 200px;
+  padding: 20px;
+}
+
+2.2
+let = new way of noting variables
+const = use for constant values
+
+jsbin.com
+
+2.3 arrow functions
+
+const myFunc = () => { }
+it fixes the issues with the this keyword: so using this inside an arrow function will always keep it's context.
+
+function printMyName(name) {
+	console.log(name);
+}
+MEANS THE SAME AS
+const printMyName = (name) => {
+	console.log(name);
+}
+
+but the parenthesis can be omitted, so:
+const printMyName = name => {
+	console.log(name);
+}
+
+or using a method that return sg in 2 ways:
+
+const doubleMe = (number) => {
+  return number*2;
+}
+MEANS THE SAME AS
+const doubleMe = number => number*2;
+
+2.4 exports and imports
+you can import the whole content of a file with
+import person from './person.js'
+
+or you can import specific functions with the {} curly braces like:
+import {baseData} from './utility.js'
+
+or we can give it an alias:
+import {baseData as bData} from './utility.js'
+
+or we can import everything with:
+import * as bundled from './utility.js'
+so it will be accessible like: bundled.baseData, or bundled.clean, etc.
+
+2.5 classes
+
+2.6 classes, properties, methods
+in es6, we construct classes with:
+constructor() {
+	this.myProperty = 'value';
+}
+HOWEVER in es7, we use
+myProperty = 'value'
+
+2.7 SPREAD and REST operators
+it is: ... (3 dots)
+
+Spread: 
+let oldArray = [1,2,3];
+let newArray = [...oldArray, 1,2]
+
+same for the object:
+const newObject = {... oldObject, newProp: 5 } // if oldObject has already a newProp, it will be overwritten
+without ... [oldArray, 1,2], it would be: [[1,2,3],1,2]
+
+REst: used to merge a list of function arguments into an array
+
+function sortArgs(...args) {
+	return args.sort();
+}
+
+'===' checks for type and value equality
+
+8. destructuring
+array destructuring:
+[a,b] = ['Hello','Max'];
+[num1, , num3] = [1,2,3]
+console.log(a) //hello
+console.log(b) // max
+console.log(3) // 3
+
+object destructuring:
+{name} = {name: 'max', age:28}
+console.log(name);
+
+2.9 reference & primitive type
+const person = {
+	name: 'max'
+};
+
+//this creates a real copy of the original person object
+const secondPerson = {
+	...person
+};
+
+2.10 array functions
+map()
+
+////////////////////////////////////////////////
+3. Understanding the base features and syntax
+
+3.3 using create react app
+
+3.4
+public folder is the folder that gets served by the server in the end
+
+ReactDom.render(<App />, 
+
+3.6 understanding jsx
+
