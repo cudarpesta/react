@@ -173,7 +173,7 @@ stateless comp (or presentational or dumb component) is a comp, which has no int
 it is a common practice to pass down click handlers (which allow us to change data in the parent component) to child components from parent components.
 
 IMPORTANT
-if using () => this.switchNameHandler(), it automaticallywrites a return in front of this.switchNa....
+if using () => this.switchNameHandler(), it automatically writes a return in front of this.switchNa....
 so if we're using onClick={this.switchNameHandler} , it is equal of using onClick={() => this.switchNameHandler()} , meaning this won't get executed if using () at the end
 
 3.23 adding two way bounding
@@ -195,6 +195,8 @@ In case of inline styles, the scope is for the current component.
 
 3.27 assignment
 
+/////////////////////////////////////////////////////////////
 
+4. working with lists and conditionals
 
 
