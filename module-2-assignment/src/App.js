@@ -2,8 +2,31 @@ import logo from "./logo.svg";
 import "./App.css";
 import UserInput from "./components/UserInput";
 import UserOutput from "./components/UserOutput";
-import React, { Component } from "react";
+import React, { useState } from "react";
 
+function App() {
+  const [name, setName] = useState("Albert");
+
+  const nameChanged = (event) => {
+    setName(event.target.value);
+    // setName("Akkor se");
+  };
+
+  return (
+    <div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
+      <UserInput changed={nameChanged} init={name} />
+
+      <UserOutput userName={name} />
+      <UserOutput />
+      <UserOutput />
+    </div>
+  );
+}
+
+/*
 class App extends Component {
   state = {
     username: "Albert",
@@ -30,5 +53,5 @@ class App extends Component {
     );
   }
 }
-
+*/
 export default App;

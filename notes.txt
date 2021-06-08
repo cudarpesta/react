@@ -198,5 +198,41 @@ In case of inline styles, the scope is for the current component.
 /////////////////////////////////////////////////////////////
 
 4. working with lists and conditionals
+4.2
+inside the jsx code - return, or render part
+{ showState ? <div><div> : null }
+will render the div part if showState is true, else null
 
+4.3 refactoring the ternary
+when the module loads, we render everything in the return's content.
+when react decides it needs to re-render the screen, it returns everything inside the render method ( not just the return expression).
+
+after the render, and before the return add js code:
+let persons = null;
+if(this.state.showPersons) {
+<div>
+add the content to be shown here
+</div>
+}
+
+4.5 Outputting lists
+after every json object, we can use the .map() function
+
+4.6 Lists & state
+add a deletepersonhandler - since it is a list, we need to know which person is to be deleted
+
+we change the persons.map(person) TO persons.map((person, index) ) => ...
+using splice, reference: https://www.w3schools.com/jsref/jsref_splice.asp
+copies the old array, adding/removing the elements, and returns a new array
+
+4.7 updating state immutably
+IMPORTANT: state should be always updated in an immutable fashion. So first create a copy of the original input, modify, then return the new array/object
+
+4.8 lists & keys
+A key property is a prop, that react expects to find no matter if it's a custom component, or a default html element, which we render
+
+IMPORTANT
+this helps react to update the list efficiently, because react has a virtual dom in the background, to see what "would happen" if the change takes place, and makes a comparison. Based on this comparison, react will only update the dom with the specific modified elements!!
+
+Without a key, react would delete an element, and after that, just re-render the WHOLE LIST, which is very inefficient.  
 
